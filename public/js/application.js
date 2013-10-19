@@ -7,10 +7,7 @@ $(document).ready(function(){
 
     
     $.post('/color', function(response){
-      console.log(response)
-      var json = $.parseJSON(data)
-      console.log(json)
-      $('#color_me').html(response);
+      $('#color_me li:nth-child(' + response.li + ')').css('background-color', response.col);
     }, "json");
   });
 });
